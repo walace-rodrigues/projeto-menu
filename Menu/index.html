@@ -413,22 +413,6 @@
 
                 <div id="itensCarrinho" class="row mr-0 ml-0 hidden">
 
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div id="localEntrega" class="row mr-0 ml-0 hidden">
@@ -520,7 +504,7 @@
 
                 </div>
 
-                <div id="resumoCarrinho" class="row mr-0 ml-0">
+                <div id="resumoCarrinho" class="row mr-0 ml-0 hidden" >
                     <div class="col-12">
                         <p class="title-carrinho mt-4">
                             <b>Itens do pedido</b>
@@ -580,23 +564,23 @@
                 <div class="container-total text-right mb-4">
                     <p class="mb-0">
                         <span>Subtotal:</span>
-                        <span id="lblSubTotal">R$ 95,00</span>
+                        <span id="lblSubTotal">R$ 0,00</span>
                     </p>
                     <p class="mb-0 texto-entrega">
                         <span><i class="fas fa-motorcycle"></i> Entrega:</span>
-                        <span id="lblValorEntrega">+ R$ 5,00</span>
+                        <span id="lblValorEntrega">+ R$ 0,00</span>
                     </p>
                     <p class="mb-0 texto-total">
                         <span><b>Total:</b></span>
-                        <span class="valor-total" id="lblValortotal"><b>R$ 100,00</b></span>
+                        <span class="valor-total" ><b id="lblValorTotal">R$ 0,00</b></span>
                     </p>
                 </div>
 
-                <a class="btn btn-yellow float-right" id="btnEtapaPedido">
+                <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
                     Continuar
                 </a>
 
-                <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
                     Revisar pedido
                 </a>
 
@@ -604,7 +588,7 @@
                     Enviar pedido
                 </a>
 
-                <a class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
+                <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-white float-right mr-3 hidden" id="btnVoltar">
                     Voltar
                 </a>
 
