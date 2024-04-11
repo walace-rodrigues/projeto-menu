@@ -17,6 +17,9 @@ cardapio.eventos = {
 
     init: () => {
         cardapio.metodos.obterItensCardapio();
+        cardapio.metodos.carregarBotaoReserva();
+        cardapio.metodos.carregarBotaoLigar();
+        
     }
 
 }
@@ -537,6 +540,52 @@ cardapio.metodos = {
             })
 
         }
+
+    },
+
+
+    // carrega o link do botao reserva
+    carregarBotaoReserva: () => {
+
+        var texto = 'Olá! Gostaria de fazer uma *reserva*'
+        let encode = encodeURI(texto)
+
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`
+
+        $("#btnReserva").attr('href', URL)
+
+    },
+
+    // envia um olá pelo wpp
+    carregarWhatsapp: () => {
+
+        var texto = 'Olá!*'
+        let encode = encodeURI(texto)
+
+        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`
+
+        $(".btn-whatsapp").attr('href', URL)
+
+    },
+
+    // carrega o botao de ligar
+    carregarBotaoLigar: () => {
+        $('#btnLigar').attr('href', `tel:${CELULAR_EMPRESA}`);
+    },
+
+    // abre o depoimento
+    abrirDepoimento: (depoimento) => {
+
+        $("#depoimento-1").addClass('hidden')
+        $("#depoimento-2").addClass('hidden')
+        $("#depoimento-3").addClass('hidden')
+
+        $("#btnDepoimento-1").removeClass('active')
+        $("#btnDepoimento-2").removeClass('active')
+        $("#btnDepoimento-3").removeClass('active')
+
+        $("#depoimento-" + depoimento).removeClass('hidden')
+        $("#btnDepoimento-" + depoimento).addClass('active')
 
     },
 
